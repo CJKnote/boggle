@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Boggle{% endblock %}
+
+{% block content %}
+<h1>Boggle</h1>
+
+<section id="boggle_game">
+    <table id="board">
+        <tbody>
+            {% for row in board %}
+            <tr>
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <form action ="/guess" method="POST">
+        <input type='text' placeholder="type your word here" name="guess" required>
+    </form>
+</section>
+
+<ul id="entered_words">
+
+</ul>
+
+
+
+
+{% endblock %}
